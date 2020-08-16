@@ -9,7 +9,7 @@ var tbody = d3.select("tbody");
 
 // Create function to process form entries and filter data
 function handleChange(event) {
-    tbody.html("")
+    tbody.html("");
     var inputText = d3.event.target.value;
     function dateMatch(item) {
         return item.datetime === inputText;
