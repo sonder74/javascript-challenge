@@ -12,10 +12,11 @@ var filterButton = d3.select("#filter-btn")
 var tbody = d3.select("tbody");
 
 // Initialize arrays
-dateData = [];
-cityData = [];
-stateData = [];
-countryData = [];
+var dateData = [];
+var cityData = [];
+var stateData = [];
+var countryData = [];
+var filteredData = [];
 
 // Create functions for handling form events
 function filterDates() {
@@ -58,8 +59,115 @@ function filterCountries(value) {
 // Create function for handling button event and building table
 function buttonClick(event) {
     tbody.html("");
-    filteredData = dateData.concat(cityData, stateData, countryData);
-    filteredData.forEach(function buildTable(data) {
+
+    // No nulls
+    if (document.getElementById("datetime") !== "" && document.getElementById("city") !== "" && document.getElementById("state") !== "" && document.getElementById("country") !== "") {
+        filteredData = filteredData.concat(dateData, cityData, stateData, countryData);
+        var finalData = filteredData.filter(function(item) {
+            return (item.datetime === document.getElementById("datetime").value && item.city === document.getElementById("city").value && item.state === document.getElementById("state").value && item.country === document.getElementById("country").value);
+        });
+    }else{
+        // Null datetime
+        if (document.getElementById("datetime") === "" && document.getElementById("city") !== "" && document.getElementById("state") !== "" && document.getElementById("country") !== "") {
+            filteredData = filteredData.concat(cityData, stateData, countryData);
+            var finalData = filteredData.filter(function(item) {
+                return (item.city === document.getElementById("city").value && item.state === document.getElementById("state").value && item.country === document.getElementById("country").value);
+            });
+        }else{
+            // Null city
+            if (document.getElementById("datetime") !== "" && document.getElementById("city") === "" && document.getElementById("state") !== "" && document.getElementById("country") !== "") {
+                filteredData = filteredData.concat(dateData, stateData, countryData);
+                var finalData = filteredData.filter(function(item) {
+                    return (item.datetime === document.getElementById("datetime").value && item.state === document.getElementById("state").value && item.country === document.getElementById("country").value);
+                });
+            }else{
+                // Null state
+                if (document.getElementById("datetime") !== "" && document.getElementById("city") !== "" && document.getElementById("state") === "" && document.getElementById("country") !== "") {
+                    filteredData = filteredData.concat(dateData, cityData, countryData);
+                    var finalData = filteredData.filter(function(item) {
+                        return (item.datetime === document.getElementById("datetime").value && item.city === document.getElementById("city").value && item.country === document.getElementById("country").value);
+                    });
+                }else{
+                    // Null country
+                    if (document.getElementById("datetime") !== "" && document.getElementById("city") !== "" && document.getElementById("state") !== "" && document.getElementById("country") === "") {
+                        filteredData = filteredData.concat(dateData, cityData, stateData, countryData);
+                        var finalData = filteredData.filter(function(item) {
+                            return (item.datetime === document.getElementById("datetime").value && item.city === document.getElementById("city").value && item.state === document.getElementById("state").value);
+                        });
+                    }else{
+                        // Null datetime and city
+                        if (document.getElementById("datetime") === "" && document.getElementById("city") === "" && document.getElementById("state") !== "" && document.getElementById("country") !== "") {
+                            filteredData = filteredData.concat(stateData, countryData);
+                            var finalData = filteredData.filter(function(item) {
+                                return (item.state === document.getElementById("state").value && item.country === document.getElementById("country").value);
+                            });
+                        }else{
+                            // Null datetime, city, and state
+                            if (document.getElementById("datetime") === "" && document.getElementById("city") === "" && document.getElementById("state") === "" && document.getElementById("country") !== "") {
+                                filteredData = filteredData.concat(countryData);
+                                var finalData = filteredData.filter(function(item) {
+                                    return (item.country === document.getElementById("country").value);
+                                });
+                            }else{
+                                // Null city, state, and country
+                                if (document.getElementById("datetime") !== "" && document.getElementById("city") === "" && document.getElementById("state") === "" && document.getElementById("country") === "") {
+                                    filteredData = filteredData.concat(dateData);
+                                    var finalData = filteredData.filter(function(item) {
+                                        return (item.datetime === document.getElementById("datetime").value);
+                                    });
+                                }else{
+                                    // Null state and country
+                                    if (document.getElementById("datetime") !== "" && document.getElementById("city") !== "" && document.getElementById("state") === "" && document.getElementById("country") === "") {
+                                        filteredData = filteredData.concat(dateData, cityData);
+                                        var finalData = filteredData.filter(function(item) {
+                                            return (item.datetime === document.getElementById("datetime").value && item.city === document.getElementById("city").value);
+                                        });
+                                    }else{
+                                        // Null city and country
+                                        if (document.getElementById("datetime") !== "" && document.getElementById("city") === "" && document.getElementById("state") !== "" && document.getElementById("country") === "") {
+                                            filteredData = filteredData.concat(dateData, stateData);
+                                            var finalData = filteredData.filter(function(item) {
+                                                return (item.datetime === document.getElementById("datetime").value && item.state === document.getElementById("state").value);
+                                            });
+                                        }else{
+                                            // Null datetime and state
+                                            if (document.getElementById("datetime") === "" && document.getElementById("city") !== "" && document.getElementById("state") === "" && document.getElementById("country") !== "") {
+                                                filteredData = filteredData.concat(cityData, countryData);
+                                                var finalData = filteredData.filter(function(item) {
+                                                    return (item.city === document.getElementById("city").value && item.country === document.getElementById("country").value);
+                                                });
+                                            }else{
+                                                // Null datetime and country
+                                                if (document.getElementById("datetime") === "" && document.getElementById("city") !== "" && document.getElementById("state") !== "" && document.getElementById("country") === "") {
+                                                    filteredData = filteredData.concat(cityData, stateData);
+                                                    var finalData = filteredData.filter(function(item) {
+                                                        return (item.city === document.getElementById("city").value && item.state === document.getElementById("state").value);
+                                                    });
+                                                }else{
+                                                    // Null city and state
+                                                    if (document.getElementById("datetime") !== "" && document.getElementById("city") === "" && document.getElementById("state") === "" && document.getElementById("country") !== "") {
+                                                        filteredData = filteredData.concat(dateData, countryData);
+                                                        var finalData = filteredData.filter(function(item) {
+                                                            return (item.datetime === document.getElementById("datetime").value && item.country === document.getElementById("country").value);
+                                                        });
+                                                    }else{
+                                                        // Null datetime, state, and country
+                                                        if (document.getElementById("datetime") === "" && document.getElementById("city") !== "" && document.getElementById("state") === "" && document.getElementById("country") === "") {
+                                                            filteredData = filteredData.concat(cityData);
+                                                            var finalData = filteredData.filter(function(item) {
+                                                                return (item.city === document.getElementById("city").value);
+                                                            });
+                                                        }else{
+                                                            // Null datetime, city, and country
+                                                            if (document.getElementById("datetime") === "" && document.getElementById("city") === "" && document.getElementById("state") !== "" && document.getElementById("country") === "") {
+                                                                filteredData = filteredData.concat(stateData);
+                                                                var finalData = filteredData.filter(function(item) {
+                                                                    return (item.state === document.getElementById("state").value);
+                                                                });
+                                                            };
+
+    // Build table
+    finalData.forEach(function buildTable(data) {
         console.log(data);
         var row = tbody.append("tr");
         Object.entries(data).forEach(function([key, value]) {
@@ -71,7 +179,8 @@ function buttonClick(event) {
     cityData = [];
     stateData = [];
     countryData = [];
-    filteredData = [];
+    // filteredData = [];
+    // finalData = [];
 };
 
 // Create event listeners
@@ -80,10 +189,3 @@ cityForm.on("change", filterCities);
 stateForm.on("change", filterStates);
 countryForm.on("change", filterCountries);
 filterButton.on("click", buttonClick);
-
-
-
-
-
-
-
