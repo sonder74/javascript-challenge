@@ -1,4 +1,4 @@
-# Web Scraping Challenge (Grade: A)
+# JavaScript Challenge (Grade: A-)
  
 ### Table of Contents:
 
@@ -9,13 +9,23 @@
  5. [Coding Screenshots](#coding-screenshots)
 
 ## Project Goals
-This was my most challenging assignment to date! I had to master the art of web scraping, which requires the creation of a <a href="https://www.python.org/">Python</a>-driven program that pulls live data from third-party websites, Twitter accounts, and other online sources. The project's theme focused on the planet Mars and required up-to-the-minute data from the National Aeronautics and Space Administration (NASA).
+With this project, I set out to master <a href="https://en.wikipedia.org/wiki/JavaScript">JavaScript</a>, a programming language that controls the client-side behavior of websites and web-based applicaitons. JavaScript is what makes individual sites and the <a href="https://en.wikipedia.org/wiki/World_Wide_Web">World Wide Web</a> interactive. I was provided with a dataset of UFO sightings for the assignment, and I was tasked with designing a new web page, populating a dynamic table with the data, and creating interactive data-entry fields that allowed a user to perform searches and other table manipulations.
 
 ## Tools and Solutions
-To scrape data from NASA's Jet Propulsion Laboratory, Twitter, and other sources, I had to make use of <a href="https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)">Beautiful Soup</a>, a Python package designed for parsing <a href="https://en.wikipedia.org/wiki/HTML">HTML</a> and <a href="https://en.wikipedia.org/wiki/XML">XML</a> documents. Crafting Python code to locate particular datapoints on complex webpages can be extremely tricky, and I succeeded only after discovering the <a href="https://www.datacamp.com/community/tutorials/python-time-sleep?utm_source=adwords_ppc&utm_campaignid=1565261270&utm_adgroupid=67750485268&utm_device=c&utm_keyword=&utm_matchtype=b&utm_network=g&utm_adpostion=&utm_creative=295208661496&utm_targetid=aud-299261629574:dsa-429603003980&utm_loc_interest_ms=&utm_loc_physical_ms=9028322&gclid=Cj0KCQjw28T8BRDbARIsAEOMBcyqdyggLi4lUipH27YAIpdiHlKZ_lei9cjAy5jYoR2U91hlNKGeg2AaAiA2EALw_wcB">time.sleep()</a> function, which introduces intentional delays into a program's runtime. Once <a href="https://github.com/sonder74/web-scraping-challenge/blob/master/scrape_mars.py">my scraping program</a> was completed, I created <a href="https://github.com/sonder74/web-scraping-challenge/blob/master/app.py">a Flask application</a> and routed the results to <a href="https://github.com/sonder74/web-scraping-challenge/blob/master/screenshots/scrape_page_1.png">a simple landing page</a>, so that the final outcome could be viewed and refreshed via a local server.
+Most of this project's tasks focused on <a href="https://www.computerhope.com/jargon/e/event-listener.htm">event listening</a>, a category of interactions that take place between JavaScript and <a href="https://en.wikipedia.org/wiki/HTML">HTML</a>. Creating an event-listening function in connection with a particular HTML object allows JavaScript to execute upon the event's occurence. In the first part of the project, that event was the user's entry of a date. I <a href="https://github.com/sonder74/javascript-challenge/blob/master/UFO-level-1/static/js/app.js">programmed JavaScript</a> to use that entry as a filter on the table data, providing the user with table rows that matched his or her date. The bonus portion of the project required the simultaneous use of multiple user entries, in multiple HTML fields. I attempted to program <a href="https://github.com/sonder74/javascript-challenge/blob/master/UFO-level-2/static/js/app.js">a complex series of JavaScript conditionals</a> to handle these events, but unfortunately I was not able to successfully implement the code.
 
 ## Outcomes and Lessons Learned
-This project involved more trial-and-error than any of the preceding assignments, but the hard work ultimately paid off. It was exciting to see live data pulled into <a href="https://github.com/sonder74/web-scraping-challenge/blob/master/screenshots/scrape_page_1.png">my "Mission to Mars" web application</a>, and I felt much more confident about my ability to gather, process, and display data in a dynamic and useful way.
+Despite my difficulties with the project's bonus assignment, I had a great time learning the basics of JavaScript and attempting to apply them to a live website. I realized that JavaScript is what makes websites fun and useful, and I look forward to using it more routinely.
+
+## App Screenshots
+![scrape_page_1](screenshots/scrape_page_1.png)
+<br>
+![scrape_page_2](screenshots/scrape_page_2.png)
+
+## Coding Screenshots
+![mars_scrape](screenshots/mars_scrape.png)
+<br>
+![mars_flask](screenshots/mars_flask.png)
 
 
 
