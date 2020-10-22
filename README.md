@@ -17,7 +17,6 @@ To scrape data from NASA's Jet Propulsion Laboratory, Twitter, and other sources
 ## Outcomes and Lessons Learned
 This project involved more trial-and-error than any of the preceding assignments, but the hard work ultimately paid off. It was exciting to see live data pulled into <a href="https://github.com/sonder74/web-scraping-challenge/blob/master/screenshots/scrape_page_1.png">my "Mission to Mars" web application</a>, and I felt much more confident about my ability to gather, process, and display data in a dynamic and useful way.
 
-## App Screenshots
 
 
 
