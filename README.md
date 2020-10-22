@@ -18,11 +18,11 @@ Most of this project's tasks focused on <a href="https://www.computerhope.com/ja
 Despite my difficulties with the project's bonus assignment, I had a great time learning the basics of JavaScript and attempting to apply them to a live website. I realized that JavaScript is what makes websites fun and useful, and I look forward to using it more routinely.
 
 ## App Screenshots
-![app.js_screenshot](screenshots/app.js_screenshot)
+![app.js_screenshot](screenshots/app.js_screenshot.png)
 <br>
-![app.js_2_screenshot](screenshots/app.js_2_screenshot)
+![app.js_2_screenshot](screenshots/app.js_2_screenshot.png)
 
 ## Coding Screenshots
-![mars_scrape](screenshots/mars_scrape.png)
+![index.html](screenshots/index.html_screenshot.png)
 <br>
-![mars_flask](screenshots/mars_flask.png)
+![data.js_screenshot](screenshots/data.js_screenshot.png)
