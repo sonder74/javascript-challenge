@@ -9,7 +9,7 @@
  5. [Coding Screenshots](#coding-screenshots)
 
 ## Project Goals
-This was my most challenging assignment to date! I had to master the art of web scraping, which requires the creation of a <a href="https://www.python.org/">Python</a>-driven program that pulls live data from third-party websites, Twitter accounts, and other online sources. The project's theme focused on the planet Mars and required up-to-the-minute data from the National Aeronautics and Space Administration (NASA).
+
 
 
 
