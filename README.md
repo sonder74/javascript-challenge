@@ -8,7 +8,6 @@
  4. [App Screenshots](#app-screenshots)
  5. [Coding Screenshots](#coding-screenshots)
 
-## Project Goals
 
 
 
