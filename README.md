@@ -22,10 +22,7 @@ This project involved more trial-and-error than any of the preceding assignments
 <br>
 ![scrape_page_2](screenshots/scrape_page_2.png)
 
-## Coding Screenshots
-![mars_scrape](screenshots/mars_scrape.png)
-<br>
-![mars_flask](screenshots/mars_flask.png)
+
 
 
 # JavaScript Homework - JavaScript and DOM Manipulation
